@@ -1,1 +1,45 @@
-@import "reset.css"
+@import "reset.css";
+
+:root {
+	--green: hsl(140 60% 10% / 1);
+	--gold: hsl(45 93% 57% / 1);
+
+	--background-color: var(--green);
+	--color: var(--gold);
+}
+
+body {
+	color: var(--color);
+	background-color: var(--background-color);
+
+	&>header {
+		display: grid;
+		gap: 1rem;
+		min-height: 100dvh;
+		place-content: center;
+		text-align: center;
+	}
+
+	main {
+		&>article {
+			min-height: calc(100dvh - 2rem);
+			margin: 2rem;
+			padding: 2rem;
+			border: 2px var(--color) solid;
+		}
+	}
+}
+
+@keyframes scroll-down {
+	50% {
+		transform: scale(105%);
+	}
+}
+
+.scroll-down {
+	animation: infinite 2s scroll-down ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	translate: 0;
+}
