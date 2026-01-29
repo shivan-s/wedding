@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { m } from '$i18n/messages.js';
 	import { getLocale } from '$i18n/runtime';
+	import Hands from './Hands.svelte';
 </script>
 
 <section>
@@ -17,6 +18,7 @@
 			<br />
 			<span>{m.shivan()}</span>
 		</p>
+		<Hands />
 		<p>
 			{@html m.daughter()}
 			<br />
@@ -31,11 +33,11 @@
 		<p>{m.tamil_address()}</p>
 		<p>{m.tamil_parents()}</p>
 	{/if}
-	<p>
+	<p style="text-align: center">
 		{m.invitation_only()}
 	</p>
 	{#if getLocale() === 'en-au'}
-		<p>
+		<p style="text-align: center">
 			{m.rsvp_only()}
 		</p>
 	{/if}
@@ -48,8 +50,8 @@
 		gap: var(--gap);
 		justify-content: center;
 		min-height: calc(100dvh - 2rem);
-		margin: 1rem;
-		padding: 1rem;
+		margin: var(--margin);
+		padding: var(--margin);
 		border: 6px var(--color) double;
 		scroll-snap-align: start;
 		& header {
@@ -60,12 +62,13 @@
 		}
 		& > div {
 			display: grid;
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: 1fr auto 1fr;
+			align-items: center;
 			text-align: center;
 			p > span {
-				font-family: 'Imperial Script', cursive;
+				font-family: ImperialScript, BalooThambi2, cursive;
+				font-size: 2rem;
 				font-weight: 900;
-				font-style: normal;
 				text-shadow: 0rem 0.1rem 0.1rem hsl(from var(--color) h s l / 60%);
 			}
 		}
