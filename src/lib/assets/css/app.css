@@ -1,0 +1,29 @@
+@import "reset.css";
+
+:root {
+	--green: hsl(140 60% 10% / 1);
+	--burgundy: hsl(345 100% 33.5%);
+	--gold: hsl(45 93% 57% / 1);
+	--gold: hsl(44.19 100% 70.98% / 1);
+
+	--background-color: var(--burgundy);
+	--color: var(--gold);
+
+	--gap: 1rem;
+
+	--margin: 2rem;
+	--scroll-padding-block-start: var(--margin) / 2;
+}
+
+html {
+
+	color: var(--color);
+	background-color: var(--background-color);
+	scroll-snap-type: block proximity;
+	scroll-snap-stop: always;
+	scroll-padding-block-start: 1rem;
+}
+
+a {
+	color: var(--color);
+}
