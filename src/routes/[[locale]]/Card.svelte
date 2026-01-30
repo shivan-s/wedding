@@ -30,16 +30,13 @@
 	</p>
 	{#if getLocale() === 'ta-lk'}
 		<p>{m.tamil_venue()}</p>
-		<p>{m.tamil_address()}</p>
+		<p>{@html m.tamil_address()}</p>
 		<p>{m.tamil_parents()}</p>
 	{/if}
-	<p style="text-align: center">
-		{m.invitation_only()}
-	</p>
+	<p>{m.invitation_only()}</p>
 	{#if getLocale() === 'en-au'}
-		<p style="text-align: center">
-			{m.rsvp_only()}
-		</p>
+		<p>{m.rsvp_only()}</p>
+		<p>{@html m.your_presence()}</p>
 	{/if}
 </section>
 
@@ -54,9 +51,6 @@
 		padding: var(--margin);
 		border: 6px var(--color) double;
 		scroll-snap-align: start;
-		& header {
-			text-align: center;
-		}
 		& > * {
 			max-width: 60ch;
 		}
@@ -64,7 +58,6 @@
 			display: grid;
 			grid-template-columns: 1fr auto 1fr;
 			align-items: center;
-			text-align: center;
 			p > span {
 				font-family: ImperialScript, BalooThambi2, cursive;
 				font-size: 2rem;
