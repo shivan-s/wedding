@@ -11,7 +11,7 @@
 <main>
 	<header>
 		<Ganesh />
-		<h1 id="top">{m.shivan_weds_kas()}</h1>
+		<h1 id="top">{@html m.shivan_weds_kas()}</h1>
 		<TimeToWedding />
 		<Lang />
 		<ScrollDown />
