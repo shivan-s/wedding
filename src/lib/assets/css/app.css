@@ -1,5 +1,5 @@
-@import "reset.css";
-@import "fonts.css";
+@import 'reset.css';
+@import 'fonts.css';
 
 :root {
 	--green: hsl(140 60% 10% / 1);
