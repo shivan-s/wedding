@@ -1,5 +1,5 @@
-@import "reset.css";
-@import "fonts.css";
+@import 'reset.css';
+@import 'fonts.css';
 
 :root {
 	--green: hsl(140 60% 10% / 1);
@@ -12,7 +12,7 @@
 
 	--gap: 1rem;
 
-	--margin: 2rem;
+	--margin: calc(8px + 1.5625vw);
 	--scroll-padding-block-start: calc(var(--margin) / 2);
 }
 
