@@ -2,6 +2,7 @@
 	import { m } from '$i18n/messages.js';
 	import { getLocale } from '$i18n/runtime';
 	import Hands from './Hands.svelte';
+	import TimeToRSVP from './TimeToRSVP.svelte';
 </script>
 
 <section>
@@ -35,7 +36,7 @@
 	{/if}
 	<p>{m.invitation_only()}</p>
 	{#if getLocale() === 'en-au'}
-		<p>{m.rsvp_only()}</p>
+		<p>{m.rsvp_only()} <TimeToRSVP /></p>
 		<p>{@html m.your_presence()}</p>
 	{/if}
 </section>
