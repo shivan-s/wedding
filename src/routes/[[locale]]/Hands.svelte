@@ -5,7 +5,7 @@
 
 <svg
 	version="1.1"
-	id="svg1"
+	id="hands"
 	width="5rem"
 	viewBox="0 0 711.90344 370.84378"
 	xmlns="http://www.w3.org/2000/svg"

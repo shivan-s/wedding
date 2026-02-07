@@ -26,7 +26,7 @@
 
 <time
 	datetime={weddingDate.toISOString()}
-	title={weddingDate.toLocaleDateString(getLocale(), { dateStyle: 'full' })}
+	title={weddingDate.toLocaleString(getLocale(), { dateStyle: 'full', timeStyle: 'short' })}
 >
 	{Math.floor(days).toString().padStart(3, '0')}d
 	{Math.floor(hours).toString().padStart(2, '0')}h
