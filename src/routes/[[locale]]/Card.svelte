@@ -2,6 +2,7 @@
 	import { m } from '$i18n/messages.js';
 	import { getLocale } from '$i18n/runtime';
 	import Hands from './Hands.svelte';
+	import TimeToRSVP from './TimeToRSVP.svelte';
 </script>
 
 <section>
@@ -12,7 +13,7 @@
 	<p>
 		{@html m.paragraph_1()}
 	</p>
-	<div>
+	<div class="shivan-kas">
 		<p>
 			{@html m.son()}
 			<br />
@@ -30,16 +31,18 @@
 	</p>
 	{#if getLocale() === 'ta-lk'}
 		<p>{m.tamil_venue()}</p>
-		<p>{m.tamil_address()}</p>
+		<p>{@html m.tamil_address()}</p>
 		<p>{m.tamil_parents()}</p>
+		<div class="parents">
+			<p>{@html m.tamil_shivan_parents()}</p>
+			<span></span>
+			<p>{@html m.tamil_kas_parents()}</p>
+		</div>
 	{/if}
-	<p style="text-align: center">
-		{m.invitation_only()}
-	</p>
+	<p>{m.invitation_only()}</p>
 	{#if getLocale() === 'en-au'}
-		<p style="text-align: center">
-			{m.rsvp_only()}
-		</p>
+		<p>{m.rsvp_only()} <TimeToRSVP /></p>
+		<p>{@html m.your_presence()}</p>
 	{/if}
 </section>
 
@@ -54,23 +57,27 @@
 		padding: var(--margin);
 		border: 6px var(--color) double;
 		scroll-snap-align: start;
-		& header {
-			text-align: center;
-		}
 		& > * {
 			max-width: 60ch;
 		}
-		& > div {
+		& > div.shivan-kas {
 			display: grid;
 			grid-template-columns: 1fr auto 1fr;
 			align-items: center;
-			text-align: center;
 			p > span {
 				font-family: ImperialScript, BalooThambi2, cursive;
 				font-size: 2rem;
 				font-weight: 900;
 				text-shadow: 0rem 0.1rem 0.1rem hsl(from var(--color) h s l / 60%);
 			}
+		}
+		& > div.parents {
+			display: grid;
+			align-content: center;
+			text-align: start;
+			font-size: 0.875rem;
+			grid-template-columns: 2fr 1fr 2fr;
+			align-items: center;
 		}
 	}
 </style>
